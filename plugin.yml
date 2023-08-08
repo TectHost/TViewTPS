@@ -1,0 +1,12 @@
+name: TViewTPS
+version: 1.0
+main: minealex.tviewtps.TViewTPS
+author: Mine_Alex
+
+commands:
+  viewtps:
+    description: View TPS
+    usage: /viewtps bossbar
+    aliases: [viewtps]
+    tab-completions:
+      - bossbar

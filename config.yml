@@ -1,0 +1,12 @@
+# Text to be displayed in the BossBar. Use '%tps%' to display the TPS value.
+tps-text: "&aTPS: %tps%"
+
+# BossBar color. You can choose between: PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE.
+tps-color: "GREEN"
+
+# BossBar style. You can choose between: SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20.
+tps-style: SOLID
+
+no-permission-message: "&5TViewTPS &e> &cYou do not have permission to execute this command."
+bossbar-message: "&5TViewTPS &e> &aBossBar displayed with TPS in real time."
+player-only-command: "&5TViewTPS &e> &cThis command can only be executed by one player."

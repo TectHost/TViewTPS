@@ -6,7 +6,5 @@ author: Mine_Alex
 commands:
   viewtps:
     description: View TPS
-    usage: /viewtps bossbar
-    aliases: [viewtps]
-    tab-completions:
-      - bossbar
+  tps:
+    description: Command TPS

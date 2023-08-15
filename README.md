@@ -1,14 +1,17 @@
 # TViewTPS
-Simple tps bossbar plugin
+Simple tps viewer plugin
 
 # Features
 - View TPS in bossbar
+- TPS Command
+- 100% customizable
 
 # Commands
 - /viewtps bossbar
+- /tps
 
 # Permissions
-- tviewtps.bossbar
+- tviewtps.viewtps (customizable)
 
 # Dependencies
 - None

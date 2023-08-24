@@ -11,3 +11,4 @@ messages:
   bossbar-shown: "&5TViewTPS &e> &aBossBar displayed with the TPS in real time."
   bossbar-not-configured: "&5TViewTPS &e> &cBossBar is not configured correctly."
   tps-message: "&5TViewTPS &e> &aServer TPS: %tps%"
+  version-message: "&aPlugin version: %s"

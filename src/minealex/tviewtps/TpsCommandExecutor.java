@@ -33,25 +33,42 @@ public class TpsCommandExecutor implements org.bukkit.command.CommandExecutor {
             return true;
         }
 
-        if (cmd.getName().equalsIgnoreCase("viewtps") && args.length > 0 && args[0].equalsIgnoreCase("bossbar")) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
-
-                if (player.hasPermission(plugin.getConfig().getString("viewtps-permission", "tviewtps.viewtps"))) {
-                    BossBar bossBar = plugin.getBossBar();
-                    if (bossBar != null) {
-                        bossBar.addPlayer(player);
-                        player.sendMessage(plugin.getBossBarShownMessage());
+        if (cmd.getName().equalsIgnoreCase("viewtps")) {
+            if (args.length == 1) {
+                if (args[0].equalsIgnoreCase("bossbar")) {
+                    if (sender instanceof Player) {
+                        Player player = (Player) sender;
+                        if (player.hasPermission("viewtps.bossbar")) {
+                            BossBar bossBar = plugin.getBossBar();
+                            if (bossBar != null) {
+                                bossBar.addPlayer(player);
+                                player.sendMessage(plugin.getBossBarShownMessage());
+                            } else {
+                                player.sendMessage(plugin.getBossBarNotConfiguredMessage());
+                            }
+                        } else {
+                            player.sendMessage(plugin.getNoPermissionMessage());
+                        }
                     } else {
-                        player.sendMessage(plugin.getBossBarNotConfiguredMessage());
+                        sender.sendMessage(plugin.getPlayerOnlyMessage());
                     }
-                } else {
-                    player.sendMessage(plugin.getNoPermissionMessage());
+                    return true;
+                } else if (args[0].equalsIgnoreCase("version")) {
+                    if (sender instanceof Player) {
+                        Player player = (Player) sender;
+                        if (player.hasPermission("viewtps.version")) {
+                            String pluginVersion = plugin.getDescription().getVersion();
+                            String versionMessage = plugin.getConfig().getString("version-message", "&aPlugin version: %s");
+                            player.sendMessage(String.format(versionMessage, pluginVersion));
+                        } else {
+                            player.sendMessage(plugin.getNoPermissionMessage());
+                        }
+                    } else {
+                        sender.sendMessage(plugin.getPlayerOnlyMessage());
+                    }
+                    return true;
                 }
-            } else {
-                sender.sendMessage(plugin.getPlayerOnlyMessage());
             }
-            return true;
         }
 
         return false;

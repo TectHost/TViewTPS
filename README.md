@@ -9,9 +9,11 @@ Simple tps viewer plugin
 # Commands
 - /viewtps bossbar
 - /tps
+- /viewtps version
 
 # Permissions
 - tviewtps.viewtps (customizable)
+- viewtps.version
 
 # Dependencies
 - None
